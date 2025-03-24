@@ -90,8 +90,7 @@ void test_fsm_nullWhenFirstOrigStateIsMinusOne (void) {
   fsm_t *f = (fsm_t*)1;
   f = fsm_new(tt);
  
-//TEST_ASSERT_EQUAL (XXX);
-  TEST_FAIL_MESSAGE("Implement the test");
+    TEST_ASSERT_EQUAL (f, NULL);
 }
 
 /**
