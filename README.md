@@ -1,3 +1,4 @@
+[![Ceedling Testing](https://github.com/apinas/fsm/actions/workflows/ceedling-tests.yaml/badge.svg?branch=main)](https://github.com/apinas/fsm/actions/workflows/ceedling-tests.yaml)
 ```
 ███████╗███████╗███╗   ███╗    ████████╗███████╗███████╗████████╗
 ██╔════╝██╔════╝████╗ ████║    ╚══██╔══╝██╔════╝██╔════╝╚══██╔══╝
