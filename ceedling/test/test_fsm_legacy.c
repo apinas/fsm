@@ -86,9 +86,9 @@ void test_fsm_init_falseWhenNullTransitions(void)
  *        de la primera transición es -1 (fin de la tabla)
  */
 void test_fsm_nullWhenFirstOrigStateIsMinusOne (void) {
-  fsm_trans_t tt[] = {{-1, is_true, 1, do_nothing}};
-  fsm_t *f = (fsm_t*)1;
-  f = fsm_new(tt);
+    fsm_trans_t tt[] = {{-1, is_true, 1, do_nothing}};
+    fsm_t *f = (fsm_t*)1;
+    f = fsm_new(tt);
  
     TEST_ASSERT_EQUAL (f, NULL);
 }
@@ -128,25 +128,36 @@ TEST_CASE(do_nothing)
 void test_fsm_new_nonNullWhenOneValidTransitionCondition(fsm_output_func_t out)
 {
     fsm_trans_t tt[] = {
-        //{},
+        {0, is_true, 1, out},
         {-1, NULL, -1, NULL}
     };
-     fsm_t *f = (fsm_t*)1;
-
-     TEST_IGNORE();
-
-     free(f);
+    fsm_malloc_AddCallback(cb_malloc);
+    fsm_malloc_ExpectAnyArgsAndReturn((void*)1);
+    fsm_t *f = fsm_new(tt); 
+    TEST_ASSERT_NOT_NULL(f);
+     
+    free(f);
 }
 
 
 /**
- * @brief Estado inicial corresponde al estado de entrada de la primera transición de la lista al crear una maquiina de estados y es valido.
+ * @brief Estado inicial corresponde al estado de entrada de la primera transición de la lista al crear una maquina de estados y es valido.
  *        Usa Stub para fsm_malloc y luego libera la memoria con free
  */
 void test_fsm_new_fsmGetStateReturnsOrigStateOfFirstTransitionAfterInit(void)
 {
+    int STATE0 = 123;
+    int STATE1 = 321;
+    fsm_trans_t tt[] = {
+        {STATE0, is_true, STATE1, do_nothing},
+        {-1, NULL, -1, NULL}
+    };
+    fsm_malloc_Stub(cb_malloc);
+    fsm_t *f = fsm_new(tt);
+    int state = fsm_get_state(f);
+    TEST_ASSERT_EQUAL(STATE0, state);
 
-    TEST_IGNORE();
+    free(f);
 }
 
 /**
@@ -155,17 +166,19 @@ void test_fsm_new_fsmGetStateReturnsOrigStateOfFirstTransitionAfterInit(void)
  */
 void test_fsm_fire_isTrueReturnsFalseMeansDoNothingIsNotCalledAndStateKeepsTheSame(void)
 {
+    int STATE0 = 123;
+    int STATE1 = 321;
     fsm_trans_t tt[] = {
-        {0, is_true, 1, do_nothing},
+        {STATE0, is_true, STATE1, do_nothing},
         {-1, NULL, -1, NULL}
     };
+    is_true_IgnoreAndReturn(0);
+    fsm_malloc_Stub(cb_malloc);
+    fsm_t *f = fsm_new(tt);
+    int state = fsm_get_state(f);
+    TEST_ASSERT_EQUAL(STATE0, state);
 
-    fsm_t f;
-    int res;
-    fsm_init(&f, tt);
-    res = fsm_get_state(&f);
-
-   TEST_IGNORE();
+    free(f);
 }
 
 /**
@@ -180,7 +193,13 @@ void test_fsm_fire_checkFunctionCalledWithFsmPointerFromFsmFire(void)
         {-1, NULL, -1, NULL}
     };
 
-    TEST_IGNORE();
+    fsm_malloc_Stub(cb_malloc);
+
+    fsm_t *f = fsm_new(tt);
+    is_true_ExpectAndReturn(f, 1);
+    fsm_fire(f);
+
+    free(f);
 }
 
 /** 
@@ -197,7 +216,10 @@ void test_fsm_fire_checkFunctionIsCalledAndResultIsImportantForTransition(bool r
     };
     fsm_t f;
     fsm_init(&f, tt);
-    TEST_IGNORE();
+    is_true_IgnoreAndReturn(returnValue);
+    fsm_fire(&f);
+    int state = fsm_get_state(&f);
+    TEST_ASSERT_EQUAL(expectedState, state);
 }
 
 
@@ -213,8 +235,11 @@ void test_fsm_new_nullWhenFsmMallocReturnsNull(void)
         {1, is_true, 0, NULL},
         {-1, NULL, -1, NULL}
     };
+    fsm_malloc_ExpectAnyArgsAndReturn(NULL);
+    fsm_t *f = fsm_new(tt);
+    TEST_ASSERT_EQUAL(NULL, f);
 
-    TEST_IGNORE();
+    free(f);
 }
 
 /**
@@ -224,7 +249,9 @@ void test_fsm_new_nullWhenFsmMallocReturnsNull(void)
  */
 void test_fsm_destroy_callsFsmFree(void)
 {
-    TEST_IGNORE();
+    fsm_t *f = (fsm_t*)1;
+    fsm_free_ExpectAnyArgs();
+    fsm_destroy(f);
 }
 
 /**
@@ -235,16 +262,22 @@ void test_fsm_fire_callsFirstIsTrueFromState0AndThenIsTrue2FromState1(void)
 {
     fsm_trans_t tt[] = {
         {0, is_true, 1, NULL},
-        //{1, is_true2, 0, NULL},   //Descomentar cuando se haya declarado una nueva función para mock is_true2
+        {1, is_true2, 0, NULL},  
         {-1, NULL, -1, NULL}
     };
-
     fsm_t f;
     int res;
     fsm_init(&f, tt);
     res = fsm_get_state(&f);
-
-    TEST_IGNORE();
+    TEST_ASSERT_EQUAL(0, res);
+    is_true_ExpectAndReturn(&f, 1);
+    fsm_fire(&f);
+    res = fsm_get_state(&f);
+    TEST_ASSERT_EQUAL(1, res);
+    is_true2_ExpectAndReturn(&f, 1);
+    fsm_fire(&f);
+    res = fsm_get_state(&f);
+    TEST_ASSERT_EQUAL(0, res);
 }
 
 /**
@@ -258,7 +291,11 @@ void test_fsm_new_calledTwiceWithSameValidDataCreatesDifferentInstancePointer(vo
         {0, is_true, 1, NULL},
         {-1, NULL, -1, NULL}
     };
+    fsm_malloc_Stub(cb_malloc);
+    fsm_t *f1 = fsm_new(tt);
+    fsm_t *f2 = fsm_new(tt);
 
-    TEST_IGNORE();
+    TEST_ASSERT_NOT_EQUAL(f1, f2);
+
 }
 
