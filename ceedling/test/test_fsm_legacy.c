@@ -297,5 +297,39 @@ void test_fsm_new_calledTwiceWithSameValidDataCreatesDifferentInstancePointer(vo
 
     TEST_ASSERT_NOT_EQUAL(f1, f2);
 
+    free(f1);
+    free(f2);
 }
 
+/**
+ * @brief Comprueba que si la tabla de transiciones es valida y tiene función de salida, esta se ejecuta.
+ *
+ */
+void test_fsm_fire_outFunctionCalled(void)
+{
+    fsm_trans_t tt[] = {
+        {0, is_true, 1, do_nothing},
+        {-1, NULL, -1, NULL}
+    };
+    
+    fsm_t f;
+    fsm_init(&f, tt);
+    do_nothing_ExpectAnyArgs();
+    is_true_IgnoreAndReturn(1);
+    fsm_fire(&f);
+}
+
+/**
+ * @brief La máquina de estados devuelve NULL si la tabla de transiciones es NULL
+ */
+void test_fsm_NotModifiedWhenTTnull (void) {
+    fsm_t f;
+    int STATE0 = 123;
+    fsm_set_state(&f, STATE0);
+    int res = fsm_get_state(&f);
+    TEST_ASSERT_EQUAL(STATE0, res);
+
+    fsm_init(&f, NULL);
+    res = fsm_get_state(&f);
+    TEST_ASSERT_EQUAL(STATE0, res);
+}
