@@ -98,8 +98,11 @@ void test_fsm_nullWhenFirstOrigStateIsMinusOne (void) {
  * 
  */
 void test_fsm_nullWhenFirstDstStateIsMinusOne (void) {
-  
-  TEST_IGNORE();
+    fsm_trans_t tt[] = {{1, is_true, -1, do_nothing}};
+    fsm_t *f = (fsm_t*)1;
+    f = fsm_new(tt);
+   
+    TEST_ASSERT_EQUAL (f, NULL);
 }
 
 /**
@@ -107,8 +110,11 @@ void test_fsm_nullWhenFirstDstStateIsMinusOne (void) {
  * 
  */
 void test_fsm_nullWhenFirstCheckFunctionIsNull (void) {
-  
-  TEST_IGNORE();
+    fsm_trans_t tt[] = {{1, NULL, 1, do_nothing}};
+    fsm_t *f = (fsm_t*)1;
+    f = fsm_new(tt);
+   
+    TEST_ASSERT_EQUAL (f, NULL);
 }
 
 /**
