@@ -48,13 +48,14 @@ void fsm_destroy(fsm_t *p_fsm)
     fsm_free(p_fsm);
 }
 
-void fsm_init(fsm_t *p_fsm, fsm_trans_t *p_tt)
+int fsm_init(fsm_t *p_fsm, fsm_trans_t *p_tt)
 {
     if (p_tt != NULL)
     {
         p_fsm->p_tt = p_tt;
         p_fsm->current_state = p_tt->orig_state;
     }
+    return -1;
 }
 
 int fsm_get_state(fsm_t *p_fsm)
