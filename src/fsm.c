@@ -50,12 +50,25 @@ void fsm_destroy(fsm_t *p_fsm)
 
 int fsm_init(fsm_t *p_fsm, fsm_trans_t *p_tt)
 {
+    int valid_transitions = 0;
+    fsm_trans_t *p_t;
     if (p_tt != NULL)
     {
         p_fsm->p_tt = p_tt;
         p_fsm->current_state = p_tt->orig_state;
+        for (p_t = p_tt; p_t->orig_state >= 0; ++p_t)
+        {
+            if ((p_t->orig_state >= 0)  && (p_t->dest_state >= 0))
+            {
+                ++valid_transitions;
+            }
+        }
+        if (valid_transitions > FSM_MAX_TRANSITIONS)
+        {
+            valid_transitions = 0;
+        } 
     }
-    return -1;
+    return valid_transitions;
 }
 
 int fsm_get_state(fsm_t *p_fsm)
