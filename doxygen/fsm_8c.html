@@ -107,9 +107,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a42ab412fe7a2ac8efb84e813d638128c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm_8c.html#a42ab412fe7a2ac8efb84e813d638128c">fsm_destroy</a> (<a class="el" href="structfsm__t.html">fsm_t</a> *p_fsm)</td></tr>
 <tr class="memdesc:a42ab412fe7a2ac8efb84e813d638128c"><td class="mdescLeft">&#160;</td><td class="mdescRight">It frees the memory previously allocated for the state machine. Once this function is called, the state machine becomes unusable. It is only necessary to call this function if the state machine was previously created by calling the <code>fsm_new</code> function.  <a href="fsm_8c.html#a42ab412fe7a2ac8efb84e813d638128c">More...</a><br /></td></tr>
 <tr class="separator:a42ab412fe7a2ac8efb84e813d638128c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee4d00cd2b36015dfbe8ab3eb02a7d7a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm_8c.html#aee4d00cd2b36015dfbe8ab3eb02a7d7a">fsm_init</a> (<a class="el" href="structfsm__t.html">fsm_t</a> *p_fsm, <a class="el" href="structfsm__trans__t.html">fsm_trans_t</a> *p_tt)</td></tr>
-<tr class="memdesc:aee4d00cd2b36015dfbe8ab3eb02a7d7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new state machine from a table of transitions.  <a href="fsm_8c.html#aee4d00cd2b36015dfbe8ab3eb02a7d7a">More...</a><br /></td></tr>
-<tr class="separator:aee4d00cd2b36015dfbe8ab3eb02a7d7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adac48c33278cb994fd785a7ba88ecc95"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm_8c.html#adac48c33278cb994fd785a7ba88ecc95">fsm_init</a> (<a class="el" href="structfsm__t.html">fsm_t</a> *p_fsm, <a class="el" href="structfsm__trans__t.html">fsm_trans_t</a> *p_tt)</td></tr>
+<tr class="memdesc:adac48c33278cb994fd785a7ba88ecc95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new state machine from a table of transitions.  <a href="fsm_8c.html#adac48c33278cb994fd785a7ba88ecc95">More...</a><br /></td></tr>
+<tr class="separator:adac48c33278cb994fd785a7ba88ecc95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a172ed4bc371674e6de85e680d733550c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm_8c.html#a172ed4bc371674e6de85e680d733550c">fsm_get_state</a> (<a class="el" href="structfsm__t.html">fsm_t</a> *p_fsm)</td></tr>
 <tr class="memdesc:a172ed4bc371674e6de85e680d733550c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current state of the state machine.  <a href="fsm_8c.html#a172ed4bc371674e6de85e680d733550c">More...</a><br /></td></tr>
 <tr class="separator:a172ed4bc371674e6de85e680d733550c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -200,7 +200,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fsm_8c_source.html#l00070">70</a> of file <a class="el" href="fsm_8c_source.html">fsm.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fsm_8c_source.html#l00084">84</a> of file <a class="el" href="fsm_8c_source.html">fsm.c</a>.</p>
 
 </div>
 </div>
@@ -229,18 +229,18 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int Current state of the state machine </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fsm_8c_source.html#l00060">60</a> of file <a class="el" href="fsm_8c_source.html">fsm.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fsm_8c_source.html#l00074">74</a> of file <a class="el" href="fsm_8c_source.html">fsm.c</a>.</p>
 
 </div>
 </div>
-<a id="aee4d00cd2b36015dfbe8ab3eb02a7d7a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aee4d00cd2b36015dfbe8ab3eb02a7d7a">&#9670;&nbsp;</a></span>fsm_init()</h2>
+<a id="adac48c33278cb994fd785a7ba88ecc95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adac48c33278cb994fd785a7ba88ecc95">&#9670;&nbsp;</a></span>fsm_init()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void fsm_init </td>
+          <td class="memname">int fsm_init </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structfsm__t.html">fsm_t</a> *&#160;</td>
           <td class="paramname"><em>p_fsm</em>, </td>
@@ -268,6 +268,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>int Number of valid transitions in the transition table </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="fsm_8c_source.html#l00051">51</a> of file <a class="el" href="fsm_8c_source.html">fsm.c</a>.</p>
 
@@ -338,7 +339,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fsm_8c_source.html#l00065">65</a> of file <a class="el" href="fsm_8c_source.html">fsm.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fsm_8c_source.html#l00079">79</a> of file <a class="el" href="fsm_8c_source.html">fsm.c</a>.</p>
 
 </div>
 </div>
