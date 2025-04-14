@@ -101,6 +101,9 @@ $(document).ready(function(){initNavTree('fsm_8c.html',''); initResizable(); });
 Functions</h2></td></tr>
 <tr class="memitem:a201468129b483039afc5a619e2d31097"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm_8c.html#a201468129b483039afc5a619e2d31097">__attribute__</a> ((weak))</td></tr>
 <tr class="separator:a201468129b483039afc5a619e2d31097"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f433e2f4350ae77186c8b73e9cae587"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm_8c.html#a1f433e2f4350ae77186c8b73e9cae587">validate_transitions</a> (<a class="el" href="structfsm__trans__t.html">fsm_trans_t</a> *p_tt)</td></tr>
+<tr class="memdesc:a1f433e2f4350ae77186c8b73e9cae587"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valida las transiciones de la tabla y cuenta las válidas.  <a href="fsm_8c.html#a1f433e2f4350ae77186c8b73e9cae587">More...</a><br /></td></tr>
+<tr class="separator:a1f433e2f4350ae77186c8b73e9cae587"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a005ed7284110b8cb4c90fe927b70f95f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structfsm__t.html">fsm_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm_8c.html#a005ed7284110b8cb4c90fe927b70f95f">fsm_new</a> (<a class="el" href="structfsm__trans__t.html">fsm_trans_t</a> *p_tt)</td></tr>
 <tr class="memdesc:a005ed7284110b8cb4c90fe927b70f95f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates memory and create a new state machine from a transition table.  <a href="fsm_8c.html#a005ed7284110b8cb4c90fe927b70f95f">More...</a><br /></td></tr>
 <tr class="separator:a005ed7284110b8cb4c90fe927b70f95f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -171,7 +174,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fsm_8c_source.html#l00046">46</a> of file <a class="el" href="fsm_8c_source.html">fsm.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fsm_8c_source.html#l00079">79</a> of file <a class="el" href="fsm_8c_source.html">fsm.c</a>.</p>
 
 </div>
 </div>
@@ -201,7 +204,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>-1 if no transitions available, 0 if guard returns false, 1 if guard returns true and transition is made. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fsm_8c_source.html#l00084">84</a> of file <a class="el" href="fsm_8c_source.html">fsm.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fsm_8c_source.html#l00107">107</a> of file <a class="el" href="fsm_8c_source.html">fsm.c</a>.</p>
 
 </div>
 </div>
@@ -230,7 +233,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int Current state of the state machine </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fsm_8c_source.html#l00074">74</a> of file <a class="el" href="fsm_8c_source.html">fsm.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fsm_8c_source.html#l00097">97</a> of file <a class="el" href="fsm_8c_source.html">fsm.c</a>.</p>
 
 </div>
 </div>
@@ -271,7 +274,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int Number of valid transitions in the transition table </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fsm_8c_source.html#l00051">51</a> of file <a class="el" href="fsm_8c_source.html">fsm.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fsm_8c_source.html#l00084">84</a> of file <a class="el" href="fsm_8c_source.html">fsm.c</a>.</p>
 
 </div>
 </div>
@@ -301,7 +304,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>fsm_t* Pointer to the memory address where the new state machine is located </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fsm_8c_source.html#l00028">28</a> of file <a class="el" href="fsm_8c_source.html">fsm.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fsm_8c_source.html#l00053">53</a> of file <a class="el" href="fsm_8c_source.html">fsm.c</a>.</p>
 
 </div>
 </div>
@@ -340,7 +343,44 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fsm_8c_source.html#l00079">79</a> of file <a class="el" href="fsm_8c_source.html">fsm.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fsm_8c_source.html#l00102">102</a> of file <a class="el" href="fsm_8c_source.html">fsm.c</a>.</p>
+
+</div>
+</div>
+<a id="a1f433e2f4350ae77186c8b73e9cae587"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f433e2f4350ae77186c8b73e9cae587">&#9670;&nbsp;</a></span>validate_transitions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int validate_transitions </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structfsm__trans__t.html">fsm_trans_t</a> *&#160;</td>
+          <td class="paramname"><em>p_tt</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Valida las transiciones de la tabla y cuenta las válidas. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_tt</td><td>Tabla de transiciones. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Número de transiciones válidas, o -1 si excede el límite. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="fsm_8c_source.html#l00033">33</a> of file <a class="el" href="fsm_8c_source.html">fsm.c</a>.</p>
 
 </div>
 </div>

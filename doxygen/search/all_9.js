@@ -1,27 +1,4 @@
 var searchData=
 [
-  ['teardown_29',['tearDown',['../test__fsm__legacy_8c.html#a9909011e5fea0c018842eec4d93d0662',1,'test_fsm_legacy.c']]],
-  ['test_5fcase_30',['TEST_CASE',['../test__fsm__legacy_8c.html#abd6e2aec703006b3da62cf7860c9808f',1,'test_fsm_legacy.c']]],
-  ['test_5ffsm_2eh_31',['test_fsm.h',['../test__fsm_8h.html',1,'']]],
-  ['test_5ffsm_5fdestroy_5fcallsfsmfree_32',['test_fsm_destroy_callsFsmFree',['../test__fsm__legacy_8c.html#a6ffe0f4f5cb7ea69e3dbdc5eb1bd5845',1,'test_fsm_legacy.c']]],
-  ['test_5ffsm_5ffire_5fcallsfirstistruefromstate0andthenistrue2fromstate1_33',['test_fsm_fire_callsFirstIsTrueFromState0AndThenIsTrue2FromState1',['../test__fsm__legacy_8c.html#a068f4a9d56c9402b801cf77b1eb0ff61',1,'test_fsm_legacy.c']]],
-  ['test_5ffsm_5ffire_5fcheckfunctioncalledwithfsmpointerfromfsmfire_34',['test_fsm_fire_checkFunctionCalledWithFsmPointerFromFsmFire',['../test__fsm__legacy_8c.html#aa52fa4cf5bed721361eeeccd9b43ff1f',1,'test_fsm_legacy.c']]],
-  ['test_5ffsm_5ffire_5fcheckfunctioniscalledandresultisimportantfortransition_35',['test_fsm_fire_checkFunctionIsCalledAndResultIsImportantForTransition',['../test__fsm__legacy_8c.html#a86f11c77c128ea17560ce131a07627fa',1,'test_fsm_legacy.c']]],
-  ['test_5ffsm_5ffire_5fistruereturnsfalsemeansdonothingisnotcalledandstatekeepsthesame_36',['test_fsm_fire_isTrueReturnsFalseMeansDoNothingIsNotCalledAndStateKeepsTheSame',['../test__fsm__legacy_8c.html#a0c13bf9253ff1b36da3634589acf32b4',1,'test_fsm_legacy.c']]],
-  ['test_5ffsm_5ffire_5foutfunctioncalled_37',['test_fsm_fire_outFunctionCalled',['../test__fsm__legacy_8c.html#a5a74d43ecc47780e9676c2a58c0daac2',1,'test_fsm_legacy.c']]],
-  ['test_5ffsm_5ffire_5freturnsminusonewhennotransitionsavailable_38',['test_fsm_fire_returnsMinusOneWhenNoTransitionsAvailable',['../test__fsm__legacy_8c.html#a7b9a77771ad6f55cb9a4ac0a4c6a0906',1,'test_fsm_legacy.c']]],
-  ['test_5ffsm_5ffire_5freturnswithtransitionsavailable_39',['test_fsm_fire_returnsWithTransitionsAvailable',['../test__fsm__legacy_8c.html#a137713c7c8a3aa86efaf911541bf6b37',1,'test_fsm_legacy.c']]],
-  ['test_5ffsm_5finit_5freturnsvalidtransitions_40',['test_fsm_init_returnsValidTransitions',['../test__fsm__legacy_8c.html#a4865b39b2c084a1a1aa5ccd58560ee39',1,'test_fsm_legacy.c']]],
-  ['test_5ffsm_5finit_5freturnszerowhenmaxtransitions_41',['test_fsm_init_returnsZeroWhenMaxTransitions',['../test__fsm__legacy_8c.html#acd07817e827f100ef64893d852446f32',1,'test_fsm_legacy.c']]],
-  ['test_5ffsm_5flegacy_2ec_42',['test_fsm_legacy.c',['../test__fsm__legacy_8c.html',1,'']]],
-  ['test_5ffsm_5fnew_5fcalledtwicewithsamevaliddatacreatesdifferentinstancepointer_43',['test_fsm_new_calledTwiceWithSameValidDataCreatesDifferentInstancePointer',['../test__fsm__legacy_8c.html#a2601e934047f20ea66011517a8875b6e',1,'test_fsm_legacy.c']]],
-  ['test_5ffsm_5fnew_5ffsmgetstatereturnsorigstateoffirsttransitionafterinit_44',['test_fsm_new_fsmGetStateReturnsOrigStateOfFirstTransitionAfterInit',['../test__fsm__legacy_8c.html#a294c7b3a3d6e33018edb4f868869fc8b',1,'test_fsm_legacy.c']]],
-  ['test_5ffsm_5fnew_5fnonnullwhenonevalidtransitioncondition_45',['test_fsm_new_nonNullWhenOneValidTransitionCondition',['../test__fsm__legacy_8c.html#a697cf66ee001262a376a4aa39696b49e',1,'test_fsm_legacy.c']]],
-  ['test_5ffsm_5fnew_5fnullwhenfsmmallocreturnsnull_46',['test_fsm_new_nullWhenFsmMallocReturnsNull',['../test__fsm__legacy_8c.html#a08d3a7436193913973c7ea318b2eb61e',1,'test_fsm_legacy.c']]],
-  ['test_5ffsm_5fnew_5fnullwhennulltransition_47',['test_fsm_new_nullWhenNullTransition',['../test__fsm__legacy_8c.html#aa253130a9d838513b588db466f3ff48f',1,'test_fsm_legacy.c']]],
-  ['test_5ffsm_5fnotmodifiedwhenttnull_48',['test_fsm_NotModifiedWhenTTnull',['../test__fsm__legacy_8c.html#ae03a3d27234ab2804ab56e20230a6eb8',1,'test_fsm_legacy.c']]],
-  ['test_5ffsm_5fnullwhenfirstcheckfunctionisnull_49',['test_fsm_nullWhenFirstCheckFunctionIsNull',['../test__fsm__legacy_8c.html#acd21d1dfe42d15541f6e89ea098ac5d4',1,'test_fsm_legacy.c']]],
-  ['test_5ffsm_5fnullwhenfirstdststateisminusone_50',['test_fsm_nullWhenFirstDstStateIsMinusOne',['../test__fsm__legacy_8c.html#a71a427351f0a6045400ad528e139dd7f',1,'test_fsm_legacy.c']]],
-  ['test_5ffsm_5fnullwhenfirstorigstateisminusone_51',['test_fsm_nullWhenFirstOrigStateIsMinusOne',['../test__fsm__legacy_8c.html#ab270ebd9ad0df120ca4475e20fea05b4',1,'test_fsm_legacy.c']]],
-  ['test_5ffsm_5ftransitionwhenguardisnull_52',['test_fsm_transitionWhenGuardIsNull',['../test__fsm__legacy_8c.html#a878422eb141b13ae741af0a0d5dd67fa',1,'test_fsm_legacy.c']]]
+  ['setup_29',['setUp',['../test__fsm__legacy_8c.html#a95c834d6178047ce9e1bce7cbfea2836',1,'test_fsm_legacy.c']]]
 ];

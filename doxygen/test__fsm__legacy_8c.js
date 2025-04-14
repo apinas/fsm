@@ -16,6 +16,7 @@ var test__fsm__legacy_8c =
     [ "test_fsm_init_returnsValidTransitions", "test__fsm__legacy_8c.html#a4865b39b2c084a1a1aa5ccd58560ee39", null ],
     [ "test_fsm_init_returnsZeroWhenMaxTransitions", "test__fsm__legacy_8c.html#acd07817e827f100ef64893d852446f32", null ],
     [ "test_fsm_new_calledTwiceWithSameValidDataCreatesDifferentInstancePointer", "test__fsm__legacy_8c.html#a2601e934047f20ea66011517a8875b6e", null ],
+    [ "test_fsm_new_doesNotCallMallocWhenMoreThanMaxTransitions", "test__fsm__legacy_8c.html#a0a505e9789e4945993e90f4a6b16681e", null ],
     [ "test_fsm_new_fsmGetStateReturnsOrigStateOfFirstTransitionAfterInit", "test__fsm__legacy_8c.html#a294c7b3a3d6e33018edb4f868869fc8b", null ],
     [ "test_fsm_new_nonNullWhenOneValidTransitionCondition", "test__fsm__legacy_8c.html#a697cf66ee001262a376a4aa39696b49e", null ],
     [ "test_fsm_new_nullWhenFsmMallocReturnsNull", "test__fsm__legacy_8c.html#a08d3a7436193913973c7ea318b2eb61e", null ],
@@ -24,5 +25,6 @@ var test__fsm__legacy_8c =
     [ "test_fsm_nullWhenFirstCheckFunctionIsNull", "test__fsm__legacy_8c.html#acd21d1dfe42d15541f6e89ea098ac5d4", null ],
     [ "test_fsm_nullWhenFirstDstStateIsMinusOne", "test__fsm__legacy_8c.html#a71a427351f0a6045400ad528e139dd7f", null ],
     [ "test_fsm_nullWhenFirstOrigStateIsMinusOne", "test__fsm__legacy_8c.html#ab270ebd9ad0df120ca4475e20fea05b4", null ],
-    [ "test_fsm_transitionWhenGuardIsNull", "test__fsm__legacy_8c.html#a878422eb141b13ae741af0a0d5dd67fa", null ]
+    [ "test_fsm_transitionWhenGuardIsNull", "test__fsm__legacy_8c.html#a878422eb141b13ae741af0a0d5dd67fa", null ],
+    [ "big_tt", "test__fsm__legacy_8c.html#ad768b67280ac703a20b3ba0bcf2a8b5d", null ]
 ];
