@@ -181,7 +181,9 @@ fsm_trans_t big_tt[] = {
     {125, is_true ,126 ,NULL},  
     {126, is_true ,127 ,NULL},  
     {127, is_true ,128 ,NULL},  
-    {128, is_true ,129 ,NULL}, 
+    {128, is_true ,129 ,NULL},
+    {-1, is_true ,0 ,NULL},  //Invalid transition
+    {0, is_true ,-1 ,NULL},  //Invalid transition
     {-1, NULL, -1, NULL}
 };
 
