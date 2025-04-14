@@ -81,20 +81,35 @@ void fsm_set_state(fsm_t *p_fsm, int state)
     p_fsm->current_state = state;
 }
 
-void fsm_fire(fsm_t *p_fsm)
+int fsm_fire(fsm_t *p_fsm)
 {
     fsm_trans_t *p_t;
+    int transitions_found = 0;
     for (p_t = p_fsm->p_tt; p_t->orig_state >= 0; ++p_t)
     {
-        //First check if the transition condition is null, if not, run the guard function. Otherwise it will cause a segmentation fault
-        if ((p_fsm->current_state == p_t->orig_state) && ((p_t->in == NULL) || (p_t->in(p_fsm))))
+        if ((p_fsm->current_state == p_t->orig_state))
         {
-            p_fsm->current_state = p_t->dest_state;
-            if (p_t->out)
-            {
-                p_t->out(p_fsm);
+            
+            if(p_t->in == NULL || p_t->in(p_fsm)){
+                p_fsm->current_state = p_t->dest_state;
+                if (p_t->out)
+                {
+                    p_t->out(p_fsm);
+                }
+                //Transition found and executed, return 1;
+                return 1;
+            } else {
+                //Transitions found but cannot be executed
+                transitions_found++;
             }
-            break;
         }
+    }
+    if(!transitions_found)
+    {
+        //No transition found, return -1
+        return -1;
+    } else {
+        //Transitions found, but not executed, return 0
+        return 0;
     }
 }

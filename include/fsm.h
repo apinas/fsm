@@ -104,7 +104,8 @@ void fsm_set_state(fsm_t *p_fsm, int state);
  * It loops through the transition table and, if an input condition is met, it switches to a new state and executes the corresponding output modification function.
  *
  * @param p_fsm Pointer to the memory address where the new state machine is located
+ * @return -1 if no transitions available, 0 if guard returns false, 1 if guard returns true and transition is made.
  */
-void fsm_fire(fsm_t *p_fsm);
+int fsm_fire(fsm_t *p_fsm);
 
 #endif /* FSM_H_ */

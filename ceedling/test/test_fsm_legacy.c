@@ -245,6 +245,57 @@ void test_fsm_transitionWhenGuardIsNull(void){
 }
 
 /**
+ * @brief Comprueba que cuando no hay transiciones disponibles, fsm_fire devuelve -1. Usa Stub para fsm_malloc y luego libera la memoria con free
+ * 
+ */
+void test_fsm_fire_returnsMinusOneWhenNoTransitionsAvailable(void){
+    int STATE0 = 0;
+    int STATE1 = 1;
+    fsm_trans_t tt[] = {
+        {STATE0, NULL, STATE1, NULL},
+        {-1, NULL, -1, NULL}
+    };
+    fsm_malloc_Stub(cb_malloc);
+    fsm_t *f = fsm_new(tt);
+    fsm_fire(f);
+
+    int ret = fsm_fire(f);
+    TEST_ASSERT_EQUAL(-1, ret);
+
+    free(f);
+}
+
+/**
+ * @brief Comprueba que cuando hay transiciones disponibles, fsm_fire devuelve 0 si la funcion de guarda no se cumple y devuelve 1 si esta devuelve true y se realiza la transicion.
+ * Usa Stub para fsm_malloc y luego libera la memoria con free
+ */
+TEST_CASE(0)
+TEST_CASE(1)
+void test_fsm_fire_returnsWithTransitionsAvailable(int expected){
+    int STATE0 = 0;
+    int STATE1 = 1;
+    fsm_trans_t tt[] = {
+        {STATE0, is_true, STATE1, NULL},
+        {-1, NULL, -1, NULL}
+    };
+
+    if(expected == 0){
+        is_true_IgnoreAndReturn(0);
+    }else{
+        is_true_IgnoreAndReturn(1);
+    }
+
+    fsm_malloc_Stub(cb_malloc);
+    fsm_t *f = fsm_new(tt);
+
+    int ret = fsm_fire(f);
+
+    TEST_ASSERT_EQUAL(expected, ret);
+
+    free(f);
+}
+
+/**
  * @brief La máquina de estados devuelve NULL
  *        y no llama a fsm_malloc si el estado de origen
  *        de la primera transición es -1 (fin de la tabla)
