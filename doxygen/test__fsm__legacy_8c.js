@@ -21,5 +21,6 @@ var test__fsm__legacy_8c =
     [ "test_fsm_NotModifiedWhenTTnull", "test__fsm__legacy_8c.html#ae03a3d27234ab2804ab56e20230a6eb8", null ],
     [ "test_fsm_nullWhenFirstCheckFunctionIsNull", "test__fsm__legacy_8c.html#acd21d1dfe42d15541f6e89ea098ac5d4", null ],
     [ "test_fsm_nullWhenFirstDstStateIsMinusOne", "test__fsm__legacy_8c.html#a71a427351f0a6045400ad528e139dd7f", null ],
-    [ "test_fsm_nullWhenFirstOrigStateIsMinusOne", "test__fsm__legacy_8c.html#ab270ebd9ad0df120ca4475e20fea05b4", null ]
+    [ "test_fsm_nullWhenFirstOrigStateIsMinusOne", "test__fsm__legacy_8c.html#ab270ebd9ad0df120ca4475e20fea05b4", null ],
+    [ "test_fsm_transitionWhenGuardIsNull", "test__fsm__legacy_8c.html#a878422eb141b13ae741af0a0d5dd67fa", null ]
 ];

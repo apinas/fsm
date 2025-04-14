@@ -12,13 +12,13 @@
 			<Name>test/test_fsm_legacy.c::test_fsm_init_returnsZeroWhenMaxTransitions</Name>
 		</Test>
 		<Test id="4">
-			<Name>test/test_fsm_legacy.c::test_fsm_nullWhenFirstOrigStateIsMinusOne </Name>
+			<Name>test/test_fsm_legacy.c::test_fsm_transitionWhenGuardIsNull</Name>
 		</Test>
 		<Test id="5">
-			<Name>test/test_fsm_legacy.c::test_fsm_nullWhenFirstDstStateIsMinusOne </Name>
+			<Name>test/test_fsm_legacy.c::test_fsm_nullWhenFirstOrigStateIsMinusOne </Name>
 		</Test>
 		<Test id="6">
-			<Name>test/test_fsm_legacy.c::test_fsm_nullWhenFirstCheckFunctionIsNull </Name>
+			<Name>test/test_fsm_legacy.c::test_fsm_nullWhenFirstDstStateIsMinusOne </Name>
 		</Test>
 		<Test id="7">
 			<Name>test/test_fsm_legacy.c::test_fsm_new_nonNullWhenOneValidTransitionCondition(NULL)</Name>
@@ -59,10 +59,13 @@
 		<Test id="19">
 			<Name>test/test_fsm_legacy.c::test_fsm_NotModifiedWhenTTnull </Name>
 		</Test>
+		<Test id="20">
+			<Name>test/test_fsm_legacy.c::test_fsm_nullWhenFirstCheckFunctionIsNull </Name>
+		</Test>
 	</SuccessfulTests>
 	<IgnoredTests/>
 	<Statistics>
-		<Tests>19</Tests>
+		<Tests>20</Tests>
 		<Ignores>0</Ignores>
 		<FailuresTotal>0</FailuresTotal>
 		<Errors>0</Errors>

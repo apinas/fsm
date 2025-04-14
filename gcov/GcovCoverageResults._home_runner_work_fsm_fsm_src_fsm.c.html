@@ -275,7 +275,7 @@
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2025-04-08 21:10:05</td>
+            <td class="headerValue">2025-04-14 20:49:53</td>
             <td></td>
             <td class="headerName">Branches:</td>
             <td class="headerTableEntry">26</td>
@@ -491,7 +491,7 @@
     <tr>
     <td align="right" class="lineno"><pre>28</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>12</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>13</pre></td>
     <td align="left" class="src coveredLine"><pre>fsm_t *fsm_new(fsm_trans_t *p_tt)</pre></td>
     </tr>
 
@@ -504,8 +504,8 @@
 
     <tr>
     <td align="right" class="lineno"><pre>30</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1 times">&check;</span><span class="takenBranch" title="Branch 1 taken 11 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>12</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1 times">&check;</span><span class="takenBranch" title="Branch 1 taken 12 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>13</pre></td>
     <td align="left" class="src coveredLine"><pre>    if (p_tt == NULL)</pre></td>
     </tr>
 
@@ -532,9 +532,9 @@
 
     <tr>
     <td align="right" class="lineno"><pre>34</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 10 times">&check;</span><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="takenBranch" title="Branch 2 taken 9 times">&check;</span><span class="takenBranch" title="Branch 3 taken 1 times">&check;</span><br/><span class="takenBranch" title="Branch 4 taken 1 times">&check;</span><span class="takenBranch" title="Branch 5 taken 8 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>11</pre></td>
-    <td align="left" class="src coveredLine"><pre>    if ((p_tt->orig_state == -1) || (p_tt->in == NULL) || (p_tt->dest_state == -1))</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 10 times">&check;</span><span class="takenBranch" title="Branch 1 taken 2 times">&check;</span><span class="takenBranch" title="Branch 2 taken 1 times">&check;</span><span class="takenBranch" title="Branch 3 taken 9 times">&check;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>12</pre></td>
+    <td align="left" class="src coveredLine"><pre>    if ((p_tt->orig_state == -1) || (p_tt->dest_state == -1))</pre></td>
     </tr>
 
     <tr>
@@ -561,14 +561,14 @@
     <tr>
     <td align="right" class="lineno"><pre>38</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>8</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>9</pre></td>
     <td align="left" class="src coveredLine"><pre>    fsm_t *p_fsm = fsm_malloc(sizeof(fsm_t));</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>39</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 7 times">&check;</span><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>8</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 8 times">&check;</span><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>9</pre></td>
     <td align="left" class="src coveredLine"><pre>    if (p_fsm != NULL)</pre></td>
     </tr>
 
@@ -582,7 +582,7 @@
     <tr>
     <td align="right" class="lineno"><pre>41</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>7</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>8</pre></td>
     <td align="left" class="src coveredLine"><pre>        fsm_init(p_fsm, p_tt);</pre></td>
     </tr>
 
@@ -596,7 +596,7 @@
     <tr>
     <td align="right" class="lineno"><pre>43</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>8</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>9</pre></td>
     <td align="left" class="src coveredLine"><pre>    return p_fsm;</pre></td>
     </tr>
 
@@ -652,7 +652,7 @@
     <tr>
     <td align="right" class="lineno"><pre>51</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>14</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>15</pre></td>
     <td align="left" class="src coveredLine"><pre>int fsm_init(fsm_t *p_fsm, fsm_trans_t *p_tt)</pre></td>
     </tr>
 
@@ -666,7 +666,7 @@
     <tr>
     <td align="right" class="lineno"><pre>53</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>14</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>15</pre></td>
     <td align="left" class="src coveredLine"><pre>    int valid_transitions = 0;</pre></td>
     </tr>
 
@@ -679,8 +679,8 @@
 
     <tr>
     <td align="right" class="lineno"><pre>55</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 13 times">&check;</span><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>14</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 14 times">&check;</span><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>15</pre></td>
     <td align="left" class="src coveredLine"><pre>    if (p_tt != NULL)</pre></td>
     </tr>
 
@@ -694,21 +694,21 @@
     <tr>
     <td align="right" class="lineno"><pre>57</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>13</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>14</pre></td>
     <td align="left" class="src coveredLine"><pre>        p_fsm->p_tt = p_tt;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>58</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>13</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>14</pre></td>
     <td align="left" class="src coveredLine"><pre>        p_fsm->current_state = p_tt->orig_state;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>59</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 144 times">&check;</span><span class="takenBranch" title="Branch 1 taken 13 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>157</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 145 times">&check;</span><span class="takenBranch" title="Branch 1 taken 14 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>159</pre></td>
     <td align="left" class="src coveredLine"><pre>        for (p_t = p_tt; p_t->orig_state >= 0; ++p_t)</pre></td>
     </tr>
 
@@ -721,8 +721,8 @@
 
     <tr>
     <td align="right" class="lineno"><pre>61</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 144 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span><span class="takenBranch" title="Branch 2 taken 144 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>144</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 145 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span><span class="takenBranch" title="Branch 2 taken 145 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>145</pre></td>
     <td align="left" class="src coveredLine"><pre>            if ((p_t->orig_state >= 0)  &amp;&amp; (p_t->dest_state >= 0))</pre></td>
     </tr>
 
@@ -736,7 +736,7 @@
     <tr>
     <td align="right" class="lineno"><pre>63</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>144</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>145</pre></td>
     <td align="left" class="src coveredLine"><pre>                ++valid_transitions;</pre></td>
     </tr>
 
@@ -756,8 +756,8 @@
 
     <tr>
     <td align="right" class="lineno"><pre>66</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1 times">&check;</span><span class="takenBranch" title="Branch 1 taken 12 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>13</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1 times">&check;</span><span class="takenBranch" title="Branch 1 taken 13 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>14</pre></td>
     <td align="left" class="src coveredLine"><pre>        if (valid_transitions > FSM_MAX_TRANSITIONS)</pre></td>
     </tr>
 
@@ -792,7 +792,7 @@
     <tr>
     <td align="right" class="lineno"><pre>71</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>14</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>15</pre></td>
     <td align="left" class="src coveredLine"><pre>    return valid_transitions;</pre></td>
     </tr>
 
@@ -813,7 +813,7 @@
     <tr>
     <td align="right" class="lineno"><pre>74</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>9</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>10</pre></td>
     <td align="left" class="src coveredLine"><pre>int fsm_get_state(fsm_t *p_fsm)</pre></td>
     </tr>
 
@@ -827,7 +827,7 @@
     <tr>
     <td align="right" class="lineno"><pre>76</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>9</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>10</pre></td>
     <td align="left" class="src coveredLine"><pre>    return p_fsm->current_state;</pre></td>
     </tr>
 
@@ -883,7 +883,7 @@
     <tr>
     <td align="right" class="lineno"><pre>84</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>7</pre></td>
     <td align="left" class="src coveredLine"><pre>void fsm_fire(fsm_t *p_fsm)</pre></td>
     </tr>
 
@@ -903,8 +903,8 @@
 
     <tr>
     <td align="right" class="lineno"><pre>87</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 7 times">&check;</span><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>8</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 8 times">&check;</span><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>9</pre></td>
     <td align="left" class="src coveredLine"><pre>    for (p_t = p_fsm->p_tt; p_t->orig_state >= 0; ++p_t)</pre></td>
     </tr>
 
@@ -917,78 +917,85 @@
 
     <tr>
     <td align="right" class="lineno"><pre>89</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 6 times">&check;</span><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="takenBranch" title="Branch 3 taken 5 times">&check;</span><span class="takenBranch" title="Branch 4 taken 1 times">&check;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>7</pre></td>
-    <td align="left" class="src coveredLine"><pre>        if ((p_fsm->current_state == p_t->orig_state) &amp;&amp; p_t->in(p_fsm))</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>        //First check if the transition condition is null, if not, run the guard function. Otherwise it will cause a segmentation fault</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>90</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 7 times">&check;</span><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="takenBranch" title="Branch 2 taken 6 times">&check;</span><span class="takenBranch" title="Branch 3 taken 1 times">&check;</span><br/><span class="takenBranch" title="Branch 5 taken 5 times">&check;</span><span class="takenBranch" title="Branch 6 taken 1 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>8</pre></td>
+    <td align="left" class="src coveredLine"><pre>        if ((p_fsm->current_state == p_t->orig_state) &amp;&amp; ((p_t->in == NULL) || (p_t->in(p_fsm))))</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>91</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>        {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>91</pre></td>
+    <td align="right" class="lineno"><pre>92</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>5</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
     <td align="left" class="src coveredLine"><pre>            p_fsm->current_state = p_t->dest_state;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>92</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1 times">&check;</span><span class="takenBranch" title="Branch 1 taken 4 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>5</pre></td>
+    <td align="right" class="lineno"><pre>93</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1 times">&check;</span><span class="takenBranch" title="Branch 1 taken 5 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
     <td align="left" class="src coveredLine"><pre>            if (p_t->out)</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>93</pre></td>
+    <td align="right" class="lineno"><pre>94</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>            {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>94</pre></td>
+    <td align="right" class="lineno"><pre>95</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>1</pre></td>
     <td align="left" class="src coveredLine"><pre>                p_t->out(p_fsm);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>95</pre></td>
+    <td align="right" class="lineno"><pre>96</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>            }</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>96</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>5</pre></td>
-    <td align="left" class="src coveredLine"><pre>            break;</pre></td>
-    </tr>
-
-    <tr>
     <td align="right" class="lineno"><pre>97</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>        }</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
+    <td align="left" class="src coveredLine"><pre>            break;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>98</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    }</pre></td>
+    <td align="left" class="src "><pre>        }</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>99</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>100</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>7</pre></td>
     <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 

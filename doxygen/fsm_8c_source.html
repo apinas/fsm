@@ -112,7 +112,7 @@ $(document).ready(function(){initNavTree('fsm_8c_source.html',''); initResizable
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    {</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordflow">return</span> NULL;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    }</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">if</span> ((p_tt-&gt;<a class="code" href="structfsm__trans__t.html#adc67dd348bb6fc59cb4d59d598747274">orig_state</a> == -1) || (p_tt-&gt;<a class="code" href="structfsm__trans__t.html#a88eefe4fbfe9c61845f867752d692ef1">in</a> == NULL) || (p_tt-&gt;<a class="code" href="structfsm__trans__t.html#af125a66cfa85df848aa173961218e809">dest_state</a> == -1))</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">if</span> ((p_tt-&gt;<a class="code" href="structfsm__trans__t.html#adc67dd348bb6fc59cb4d59d598747274">orig_state</a> == -1) || (p_tt-&gt;<a class="code" href="structfsm__trans__t.html#af125a66cfa85df848aa173961218e809">dest_state</a> == -1))</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    {</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordflow">return</span> NULL;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div>
@@ -167,17 +167,18 @@ $(document).ready(function(){initNavTree('fsm_8c_source.html',''); initResizable
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <a class="code" href="structfsm__trans__t.html">fsm_trans_t</a> *p_t;</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">for</span> (p_t = p_fsm-&gt;<a class="code" href="structfsm__t.html#a6c3c1228679eb15c274cc8bf30c334a0">p_tt</a>; p_t-&gt;<a class="code" href="structfsm__trans__t.html#adc67dd348bb6fc59cb4d59d598747274">orig_state</a> &gt;= 0; ++p_t)</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">if</span> ((p_fsm-&gt;<a class="code" href="structfsm__t.html#ab250e61dab922ea23423a06fd1e6ea34">current_state</a> == p_t-&gt;<a class="code" href="structfsm__trans__t.html#adc67dd348bb6fc59cb4d59d598747274">orig_state</a>) &amp;&amp; p_t-&gt;<a class="code" href="structfsm__trans__t.html#a88eefe4fbfe9c61845f867752d692ef1">in</a>(p_fsm))</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        {</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            p_fsm-&gt;<a class="code" href="structfsm__t.html#ab250e61dab922ea23423a06fd1e6ea34">current_state</a> = p_t-&gt;<a class="code" href="structfsm__trans__t.html#af125a66cfa85df848aa173961218e809">dest_state</a>;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <span class="keywordflow">if</span> (p_t-&gt;<a class="code" href="structfsm__trans__t.html#aa14b0ae2ea26e60da884d09f281f7302">out</a>)</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            {</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                p_t-&gt;<a class="code" href="structfsm__trans__t.html#aa14b0ae2ea26e60da884d09f281f7302">out</a>(p_fsm);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            }</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        }</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;}</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="comment">//First check if the transition condition is null, if not, run the guard function. Otherwise it will cause a segmentation fault</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordflow">if</span> ((p_fsm-&gt;<a class="code" href="structfsm__t.html#ab250e61dab922ea23423a06fd1e6ea34">current_state</a> == p_t-&gt;<a class="code" href="structfsm__trans__t.html#adc67dd348bb6fc59cb4d59d598747274">orig_state</a>) &amp;&amp; ((p_t-&gt;<a class="code" href="structfsm__trans__t.html#a88eefe4fbfe9c61845f867752d692ef1">in</a> == NULL) || (p_t-&gt;<a class="code" href="structfsm__trans__t.html#a88eefe4fbfe9c61845f867752d692ef1">in</a>(p_fsm))))</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            p_fsm-&gt;<a class="code" href="structfsm__t.html#ab250e61dab922ea23423a06fd1e6ea34">current_state</a> = p_t-&gt;<a class="code" href="structfsm__trans__t.html#af125a66cfa85df848aa173961218e809">dest_state</a>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="keywordflow">if</span> (p_t-&gt;<a class="code" href="structfsm__trans__t.html#aa14b0ae2ea26e60da884d09f281f7302">out</a>)</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                p_t-&gt;<a class="code" href="structfsm__trans__t.html#aa14b0ae2ea26e60da884d09f281f7302">out</a>(p_fsm);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            }</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="afsm_8c_html_a42ab412fe7a2ac8efb84e813d638128c"><div class="ttname"><a href="fsm_8c.html#a42ab412fe7a2ac8efb84e813d638128c">fsm_destroy</a></div><div class="ttdeci">void fsm_destroy(fsm_t *p_fsm)</div><div class="ttdoc">It frees the memory previously allocated for the state machine. Once this function is called,...</div><div class="ttdef"><b>Definition:</b> <a href="fsm_8c_source.html#l00046">fsm.c:46</a></div></div>

@@ -65,6 +65,7 @@ var NAVTREEINDEX0 =
 "test__fsm__legacy_8c.html#a6ffe0f4f5cb7ea69e3dbdc5eb1bd5845":[1,0,0,0,1,5],
 "test__fsm__legacy_8c.html#a71a427351f0a6045400ad528e139dd7f":[1,0,0,0,1,20],
 "test__fsm__legacy_8c.html#a86f11c77c128ea17560ce131a07627fa":[1,0,0,0,1,8],
+"test__fsm__legacy_8c.html#a878422eb141b13ae741af0a0d5dd67fa":[1,0,0,0,1,22],
 "test__fsm__legacy_8c.html#a95c834d6178047ce9e1bce7cbfea2836":[1,0,0,0,1,3],
 "test__fsm__legacy_8c.html#a9909011e5fea0c018842eec4d93d0662":[1,0,0,0,1,4],
 "test__fsm__legacy_8c.html#a990ea80fe562f19684aa5984e0f38487":[1,0,0,0,1,2],
