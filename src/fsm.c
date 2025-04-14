@@ -28,7 +28,7 @@ void __attribute__((weak)) fsm_free(void* p)
 /**
  * @brief Valida las transiciones de la tabla y cuenta las válidas.
  * @param p_tt Tabla de transiciones.
- * @return Número de transiciones válidas, o -1 si excede el límite.
+ * @return Número de transiciones válidas, o 0 si excede el límite.
  */
 static int validate_transitions(fsm_trans_t *p_tt)
 {
@@ -40,13 +40,13 @@ static int validate_transitions(fsm_trans_t *p_tt)
         if ((p_t->orig_state >= 0) && (p_t->dest_state >= 0))
         {
             ++valid_transitions;
-            if (valid_transitions > FSM_MAX_TRANSITIONS)
-            {
-                return 0;
-            }
+
         }
     }
-
+    if (valid_transitions > FSM_MAX_TRANSITIONS)
+    {
+        return 0;
+    }
     return valid_transitions;
 }
 
