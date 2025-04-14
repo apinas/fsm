@@ -116,13 +116,13 @@ $(document).ready(function(){initNavTree('fsm_8c_source.html',''); initResizable
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">if</span> ((p_t-&gt;<a class="code" href="structfsm__trans__t.html#adc67dd348bb6fc59cb4d59d598747274">orig_state</a> &gt;= 0) &amp;&amp; (p_t-&gt;<a class="code" href="structfsm__trans__t.html#af125a66cfa85df848aa173961218e809">dest_state</a> &gt;= 0))</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        {</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            ++valid_transitions;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keywordflow">if</span> (valid_transitions &gt; <a class="code" href="fsm_8h.html#a6556822c8c564799b910076e30832e38">FSM_MAX_TRANSITIONS</a>)</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            }</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        }</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">if</span> (valid_transitions &gt; <a class="code" href="fsm_8h.html#a6556822c8c564799b910076e30832e38">FSM_MAX_TRANSITIONS</a>)</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">return</span> valid_transitions;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
