@@ -31,7 +31,7 @@ fsm_t *fsm_new(fsm_trans_t *p_tt)
     {
         return NULL;
     }
-    if ((p_tt->orig_state == -1) || (p_tt->in == NULL) || (p_tt->dest_state == -1))
+    if ((p_tt->orig_state == -1) || (p_tt->dest_state == -1))
     {
         return NULL;
     }
