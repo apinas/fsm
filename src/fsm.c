@@ -35,18 +35,20 @@ static int validate_transitions(fsm_trans_t *p_tt)
     int valid_transitions = 0;
     fsm_trans_t *p_t;
 
-    for (p_t = p_tt; p_t->orig_state >= 0; ++p_t)
+    //Explicit int cast because otherwise it treats it as unsigned
+    for (p_t = p_tt; !(((int) p_t->orig_state == -1) && ((int) p_t->dest_state == -1)); ++p_t)
     {
-        if ((p_t->orig_state >= 0) && (p_t->dest_state >= 0))
+        if (( (int) p_t->orig_state >= 0) && ((int) p_t->dest_state >= 0))
         {
             ++valid_transitions;
-
         }
     }
+
     if (valid_transitions > FSM_MAX_TRANSITIONS)
     {
         return 0;
     }
+
     return valid_transitions;
 }
 
@@ -83,7 +85,7 @@ void fsm_destroy(fsm_t *p_fsm)
 
 int fsm_init(fsm_t *p_fsm, fsm_trans_t *p_tt)
 {
-    int valid_transitions;
+    int valid_transitions = 0;
     fsm_trans_t *p_t;
     if (p_tt != NULL)
     {
