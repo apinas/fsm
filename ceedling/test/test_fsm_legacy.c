@@ -226,7 +226,7 @@ void test_fsm_init_returnsZeroWhenMaxTransitions(void)
 }
 
 /**
- * @brief Comprueba que una función de guarda NULL se interpreta como si devolviese ¨true¨
+ * @brief Comprueba que una función de guarda NULL se interpreta como si devolviese ¨true¨. Usa Stub para fsm_malloc y luego libera la memoria con free
  * 
  */
 void test_fsm_transitionWhenGuardIsNull(void){
@@ -236,10 +236,12 @@ void test_fsm_transitionWhenGuardIsNull(void){
         {STATE0, NULL, STATE1, NULL},
         {-1, NULL, -1, NULL}
     };
-
+    fsm_malloc_Stub(cb_malloc);
     fsm_t *f = fsm_new(tt);
+    fsm_fire(f);
     int state = fsm_get_state(f);
     TEST_ASSERT_EQUAL(STATE1, state);
+    free(f);
 }
 
 /**
@@ -482,4 +484,16 @@ void test_fsm_NotModifiedWhenTTnull (void) {
     fsm_init(&f, NULL);
     res = fsm_get_state(&f);
     TEST_ASSERT_EQUAL(STATE0, res);
+}
+
+/**
+ * @brief La máquina de estados devuelve NULL y no llama a fsm_malloc si la función de comprobación de la primera transición es NULL (fin de la tabla)
+ * 
+ */
+void test_fsm_nullWhenFirstCheckFunctionIsNull (void) {
+    fsm_trans_t tt[] = {{-1, NULL, -1, NULL}};
+    fsm_t *f = (fsm_t*)1;
+    f = fsm_new(tt);
+   
+    TEST_ASSERT_EQUAL (f, NULL);
 }
