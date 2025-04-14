@@ -25,8 +25,34 @@ void __attribute__((weak)) fsm_free(void* p)
 }
 //GCOVR_EXCL_STOP
 
+/**
+ * @brief Valida las transiciones de la tabla y cuenta las válidas.
+ * @param p_tt Tabla de transiciones.
+ * @return Número de transiciones válidas, o -1 si excede el límite.
+ */
+static int validate_transitions(fsm_trans_t *p_tt)
+{
+    int valid_transitions = 0;
+    fsm_trans_t *p_t;
+
+    for (p_t = p_tt; p_t->orig_state >= 0; ++p_t)
+    {
+        if ((p_t->orig_state >= 0) && (p_t->dest_state >= 0))
+        {
+            ++valid_transitions;
+            if (valid_transitions > FSM_MAX_TRANSITIONS)
+            {
+                return 0;
+            }
+        }
+    }
+
+    return valid_transitions;
+}
+
 fsm_t *fsm_new(fsm_trans_t *p_tt)
 {
+    int valid_transitions;
     if (p_tt == NULL)
     {
         return NULL;
@@ -35,6 +61,13 @@ fsm_t *fsm_new(fsm_trans_t *p_tt)
     {
         return NULL;
     }
+
+    valid_transitions = validate_transitions(p_tt);
+    if(valid_transitions <= 0)
+    {
+        return NULL;
+    }
+
     fsm_t *p_fsm = fsm_malloc(sizeof(fsm_t));
     if (p_fsm != NULL)
     {
@@ -50,23 +83,13 @@ void fsm_destroy(fsm_t *p_fsm)
 
 int fsm_init(fsm_t *p_fsm, fsm_trans_t *p_tt)
 {
-    int valid_transitions = 0;
+    int valid_transitions;
     fsm_trans_t *p_t;
     if (p_tt != NULL)
     {
         p_fsm->p_tt = p_tt;
         p_fsm->current_state = p_tt->orig_state;
-        for (p_t = p_tt; p_t->orig_state >= 0; ++p_t)
-        {
-            if ((p_t->orig_state >= 0)  && (p_t->dest_state >= 0))
-            {
-                ++valid_transitions;
-            }
-        }
-        if (valid_transitions > FSM_MAX_TRANSITIONS)
-        {
-            valid_transitions = 0;
-        } 
+        valid_transitions = validate_transitions(p_tt);
     }
     return valid_transitions;
 }

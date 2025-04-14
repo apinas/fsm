@@ -298,6 +298,15 @@ void test_fsm_fire_returnsWithTransitionsAvailable(int expected){
     free(f);
 }
 
+/** 
+* @brief Comprueba que cuando se llama a fsm_new con una tabla de transiciones que excede el maximo, esta no llama a malloc. 
+*/
+void test_fsm_new_doesNotCallMallocWhenMoreThanMaxTransitions(void){
+
+    fsm_t *f = fsm_new(big_tt);
+    TEST_ASSERT_EQUAL(NULL, f);
+}
+
 /**
  * @brief La máquina de estados devuelve NULL
  *        y no llama a fsm_malloc si el estado de origen
