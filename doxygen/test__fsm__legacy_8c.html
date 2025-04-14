@@ -129,6 +129,12 @@ Functions</h2></td></tr>
 <tr class="memitem:a878422eb141b13ae741af0a0d5dd67fa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__fsm__legacy_8c.html#a878422eb141b13ae741af0a0d5dd67fa">test_fsm_transitionWhenGuardIsNull</a> (void)</td></tr>
 <tr class="memdesc:a878422eb141b13ae741af0a0d5dd67fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Comprueba que una función de guarda NULL se interpreta como si devolviese ¨true¨. Usa Stub para fsm_malloc y luego libera la memoria con free.  <a href="test__fsm__legacy_8c.html#a878422eb141b13ae741af0a0d5dd67fa">More...</a><br /></td></tr>
 <tr class="separator:a878422eb141b13ae741af0a0d5dd67fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b9a77771ad6f55cb9a4ac0a4c6a0906"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__fsm__legacy_8c.html#a7b9a77771ad6f55cb9a4ac0a4c6a0906">test_fsm_fire_returnsMinusOneWhenNoTransitionsAvailable</a> (void)</td></tr>
+<tr class="memdesc:a7b9a77771ad6f55cb9a4ac0a4c6a0906"><td class="mdescLeft">&#160;</td><td class="mdescRight">Comprueba que cuando no hay transiciones disponibles, fsm_fire devuelve -1. Usa Stub para fsm_malloc y luego libera la memoria con free.  <a href="test__fsm__legacy_8c.html#a7b9a77771ad6f55cb9a4ac0a4c6a0906">More...</a><br /></td></tr>
+<tr class="separator:a7b9a77771ad6f55cb9a4ac0a4c6a0906"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a137713c7c8a3aa86efaf911541bf6b37"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__fsm__legacy_8c.html#a137713c7c8a3aa86efaf911541bf6b37">test_fsm_fire_returnsWithTransitionsAvailable</a> (int expected)</td></tr>
+<tr class="memdesc:a137713c7c8a3aa86efaf911541bf6b37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Comprueba que cuando hay transiciones disponibles, fsm_fire devuelve 0 si la funcion de guarda no se cumple y devuelve 1 si esta devuelve true y se realiza la transicion. Usa Stub para fsm_malloc y luego libera la memoria con free.  <a href="test__fsm__legacy_8c.html#a137713c7c8a3aa86efaf911541bf6b37">More...</a><br /></td></tr>
+<tr class="separator:a137713c7c8a3aa86efaf911541bf6b37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab270ebd9ad0df120ca4475e20fea05b4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__fsm__legacy_8c.html#ab270ebd9ad0df120ca4475e20fea05b4">test_fsm_nullWhenFirstOrigStateIsMinusOne</a> (void)</td></tr>
 <tr class="memdesc:ab270ebd9ad0df120ca4475e20fea05b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">La máquina de estados devuelve NULL y no llama a fsm_malloc si el estado de origen de la primera transición es -1 (fin de la tabla)  <a href="test__fsm__legacy_8c.html#ab270ebd9ad0df120ca4475e20fea05b4">More...</a><br /></td></tr>
 <tr class="separator:ab270ebd9ad0df120ca4475e20fea05b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -356,7 +362,7 @@ Functions</h2></td></tr>
 
 <p>Llamar a fsm_destroy provoca una llamada a fsm_free Usa el Mock llamando a fsm_free_Expect sin Stub ni Callback. </p>
 
-<p class="definition">Definition at line <a class="el" href="test__fsm__legacy_8c_source.html#l00402">402</a> of file <a class="el" href="test__fsm__legacy_8c_source.html">test_fsm_legacy.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="test__fsm__legacy_8c_source.html#l00453">453</a> of file <a class="el" href="test__fsm__legacy_8c_source.html">test_fsm_legacy.c</a>.</p>
 
 </div>
 </div>
@@ -378,7 +384,7 @@ Functions</h2></td></tr>
 
 <p>Comprueba que solo se llame a la función de guarda que toca según el estado actual. </p>
 
-<p class="definition">Definition at line <a class="el" href="test__fsm__legacy_8c_source.html#l00413">413</a> of file <a class="el" href="test__fsm__legacy_8c_source.html">test_fsm_legacy.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="test__fsm__legacy_8c_source.html#l00464">464</a> of file <a class="el" href="test__fsm__legacy_8c_source.html">test_fsm_legacy.c</a>.</p>
 
 </div>
 </div>
@@ -400,7 +406,7 @@ Functions</h2></td></tr>
 
 <p>Comprueba que el puntero pasado a fsm_fire es pasado a la función de guarda cuando se comprueba una transición. </p>
 
-<p class="definition">Definition at line <a class="el" href="test__fsm__legacy_8c_source.html#l00340">340</a> of file <a class="el" href="test__fsm__legacy_8c_source.html">test_fsm_legacy.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="test__fsm__legacy_8c_source.html#l00391">391</a> of file <a class="el" href="test__fsm__legacy_8c_source.html">test_fsm_legacy.c</a>.</p>
 
 </div>
 </div>
@@ -432,7 +438,7 @@ Functions</h2></td></tr>
 
 <p>Comprueba que el fsm_fire funciona y tiene el estado correcto cuando la transición devuelve true (cambia) y cuando devuelve false (mantiene) </p>
 
-<p class="definition">Definition at line <a class="el" href="test__fsm__legacy_8c_source.html#l00363">363</a> of file <a class="el" href="test__fsm__legacy_8c_source.html">test_fsm_legacy.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="test__fsm__legacy_8c_source.html#l00414">414</a> of file <a class="el" href="test__fsm__legacy_8c_source.html">test_fsm_legacy.c</a>.</p>
 
 </div>
 </div>
@@ -454,7 +460,7 @@ Functions</h2></td></tr>
 
 <p>La maquina de estado no transiciona si la funcion devuelve 0. </p>
 
-<p class="definition">Definition at line <a class="el" href="test__fsm__legacy_8c_source.html#l00319">319</a> of file <a class="el" href="test__fsm__legacy_8c_source.html">test_fsm_legacy.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="test__fsm__legacy_8c_source.html#l00370">370</a> of file <a class="el" href="test__fsm__legacy_8c_source.html">test_fsm_legacy.c</a>.</p>
 
 </div>
 </div>
@@ -476,7 +482,51 @@ Functions</h2></td></tr>
 
 <p>Comprueba que si la tabla de transiciones es valida y tiene función de salida, esta se ejecuta. </p>
 
-<p class="definition">Definition at line <a class="el" href="test__fsm__legacy_8c_source.html#l00460">460</a> of file <a class="el" href="test__fsm__legacy_8c_source.html">test_fsm_legacy.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="test__fsm__legacy_8c_source.html#l00511">511</a> of file <a class="el" href="test__fsm__legacy_8c_source.html">test_fsm_legacy.c</a>.</p>
+
+</div>
+</div>
+<a id="a7b9a77771ad6f55cb9a4ac0a4c6a0906"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b9a77771ad6f55cb9a4ac0a4c6a0906">&#9670;&nbsp;</a></span>test_fsm_fire_returnsMinusOneWhenNoTransitionsAvailable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_fsm_fire_returnsMinusOneWhenNoTransitionsAvailable </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Comprueba que cuando no hay transiciones disponibles, fsm_fire devuelve -1. Usa Stub para fsm_malloc y luego libera la memoria con free. </p>
+
+<p class="definition">Definition at line <a class="el" href="test__fsm__legacy_8c_source.html#l00251">251</a> of file <a class="el" href="test__fsm__legacy_8c_source.html">test_fsm_legacy.c</a>.</p>
+
+</div>
+</div>
+<a id="a137713c7c8a3aa86efaf911541bf6b37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a137713c7c8a3aa86efaf911541bf6b37">&#9670;&nbsp;</a></span>test_fsm_fire_returnsWithTransitionsAvailable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_fsm_fire_returnsWithTransitionsAvailable </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>expected</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Comprueba que cuando hay transiciones disponibles, fsm_fire devuelve 0 si la funcion de guarda no se cumple y devuelve 1 si esta devuelve true y se realiza la transicion. Usa Stub para fsm_malloc y luego libera la memoria con free. </p>
+
+<p class="definition">Definition at line <a class="el" href="test__fsm__legacy_8c_source.html#l00274">274</a> of file <a class="el" href="test__fsm__legacy_8c_source.html">test_fsm_legacy.c</a>.</p>
 
 </div>
 </div>
@@ -542,7 +592,7 @@ Functions</h2></td></tr>
 
 <p>Comprueba que se pueden crear dos instancias de máquinas de estados simultánteas y son punteros distintos. Usa Stub para fsm_malloc y luego libera la memoria con free. </p>
 
-<p class="definition">Definition at line <a class="el" href="test__fsm__legacy_8c_source.html#l00440">440</a> of file <a class="el" href="test__fsm__legacy_8c_source.html">test_fsm_legacy.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="test__fsm__legacy_8c_source.html#l00491">491</a> of file <a class="el" href="test__fsm__legacy_8c_source.html">test_fsm_legacy.c</a>.</p>
 
 </div>
 </div>
@@ -564,7 +614,7 @@ Functions</h2></td></tr>
 
 <p>Estado inicial corresponde al estado de entrada de la primera transición de la lista al crear una maquina de estados y es valido. Usa Stub para fsm_malloc y luego libera la memoria con free. </p>
 
-<p class="definition">Definition at line <a class="el" href="test__fsm__legacy_8c_source.html#l00299">299</a> of file <a class="el" href="test__fsm__legacy_8c_source.html">test_fsm_legacy.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="test__fsm__legacy_8c_source.html#l00350">350</a> of file <a class="el" href="test__fsm__legacy_8c_source.html">test_fsm_legacy.c</a>.</p>
 
 </div>
 </div>
@@ -586,7 +636,7 @@ Functions</h2></td></tr>
 
 <p>Devuelve puntero no NULL y llama a fsm_malloc (usa Callback a cb_mallock y fsm_malloc_ExpectXXX) al crear la maquina de estados con una transición válida con función de actualización (salida) NULL o no NULL. Hay que liberar la memoria al final llamando a free. </p>
 
-<p class="definition">Definition at line <a class="el" href="test__fsm__legacy_8c_source.html#l00280">280</a> of file <a class="el" href="test__fsm__legacy_8c_source.html">test_fsm_legacy.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="test__fsm__legacy_8c_source.html#l00331">331</a> of file <a class="el" href="test__fsm__legacy_8c_source.html">test_fsm_legacy.c</a>.</p>
 
 </div>
 </div>
@@ -608,7 +658,7 @@ Functions</h2></td></tr>
 
 <p>La creación de una máquina de estados devuelve NULL si la reserva de memoria falla. Usa el Mock llamando a fsm_malloc_ExpectXXX sin Stub ni Callback. </p>
 
-<p class="definition">Definition at line <a class="el" href="test__fsm__legacy_8c_source.html#l00383">383</a> of file <a class="el" href="test__fsm__legacy_8c_source.html">test_fsm_legacy.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="test__fsm__legacy_8c_source.html#l00434">434</a> of file <a class="el" href="test__fsm__legacy_8c_source.html">test_fsm_legacy.c</a>.</p>
 
 </div>
 </div>
@@ -652,7 +702,7 @@ Functions</h2></td></tr>
 
 <p>La máquina de estados devuelve NULL si la tabla de transiciones es NULL. </p>
 
-<p class="definition">Definition at line <a class="el" href="test__fsm__legacy_8c_source.html#l00477">477</a> of file <a class="el" href="test__fsm__legacy_8c_source.html">test_fsm_legacy.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="test__fsm__legacy_8c_source.html#l00528">528</a> of file <a class="el" href="test__fsm__legacy_8c_source.html">test_fsm_legacy.c</a>.</p>
 
 </div>
 </div>
@@ -674,7 +724,7 @@ Functions</h2></td></tr>
 
 <p>La máquina de estados devuelve NULL y no llama a fsm_malloc si la función de comprobación de la primera transición es NULL (fin de la tabla) </p>
 
-<p class="definition">Definition at line <a class="el" href="test__fsm__legacy_8c_source.html#l00493">493</a> of file <a class="el" href="test__fsm__legacy_8c_source.html">test_fsm_legacy.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="test__fsm__legacy_8c_source.html#l00544">544</a> of file <a class="el" href="test__fsm__legacy_8c_source.html">test_fsm_legacy.c</a>.</p>
 
 </div>
 </div>
@@ -696,7 +746,7 @@ Functions</h2></td></tr>
 
 <p>La máquina de estados devuelve NULL y no llama a fsm_malloc si el estado de destino de la primera transición es -1 (fin de la tabla) </p>
 
-<p class="definition">Definition at line <a class="el" href="test__fsm__legacy_8c_source.html#l00264">264</a> of file <a class="el" href="test__fsm__legacy_8c_source.html">test_fsm_legacy.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="test__fsm__legacy_8c_source.html#l00315">315</a> of file <a class="el" href="test__fsm__legacy_8c_source.html">test_fsm_legacy.c</a>.</p>
 
 </div>
 </div>
@@ -718,7 +768,7 @@ Functions</h2></td></tr>
 
 <p>La máquina de estados devuelve NULL y no llama a fsm_malloc si el estado de origen de la primera transición es -1 (fin de la tabla) </p>
 
-<p class="definition">Definition at line <a class="el" href="test__fsm__legacy_8c_source.html#l00252">252</a> of file <a class="el" href="test__fsm__legacy_8c_source.html">test_fsm_legacy.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="test__fsm__legacy_8c_source.html#l00303">303</a> of file <a class="el" href="test__fsm__legacy_8c_source.html">test_fsm_legacy.c</a>.</p>
 
 </div>
 </div>

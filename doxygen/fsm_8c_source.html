@@ -162,23 +162,38 @@ $(document).ready(function(){initNavTree('fsm_8c_source.html',''); initResizable
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    p_fsm-&gt;<a class="code" href="structfsm__t.html#ab250e61dab922ea23423a06fd1e6ea34">current_state</a> = state;</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="fsm_8c.html#ab9f849bd2d80e5efaa320ddb59b4b246">   84</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="fsm_8c.html#ab9f849bd2d80e5efaa320ddb59b4b246">fsm_fire</a>(<a class="code" href="structfsm__t.html">fsm_t</a> *p_fsm)</div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="fsm_8c.html#a035fe61c1cb2bd6005a3d003fa19c1c4">   84</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="fsm_8c.html#a035fe61c1cb2bd6005a3d003fa19c1c4">fsm_fire</a>(<a class="code" href="structfsm__t.html">fsm_t</a> *p_fsm)</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;{</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <a class="code" href="structfsm__trans__t.html">fsm_trans_t</a> *p_t;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">for</span> (p_t = p_fsm-&gt;<a class="code" href="structfsm__t.html#a6c3c1228679eb15c274cc8bf30c334a0">p_tt</a>; p_t-&gt;<a class="code" href="structfsm__trans__t.html#adc67dd348bb6fc59cb4d59d598747274">orig_state</a> &gt;= 0; ++p_t)</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="comment">//First check if the transition condition is null, if not, run the guard function. Otherwise it will cause a segmentation fault</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordflow">if</span> ((p_fsm-&gt;<a class="code" href="structfsm__t.html#ab250e61dab922ea23423a06fd1e6ea34">current_state</a> == p_t-&gt;<a class="code" href="structfsm__trans__t.html#adc67dd348bb6fc59cb4d59d598747274">orig_state</a>) &amp;&amp; ((p_t-&gt;<a class="code" href="structfsm__trans__t.html#a88eefe4fbfe9c61845f867752d692ef1">in</a> == NULL) || (p_t-&gt;<a class="code" href="structfsm__trans__t.html#a88eefe4fbfe9c61845f867752d692ef1">in</a>(p_fsm))))</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordtype">int</span> transitions_found = 0;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">for</span> (p_t = p_fsm-&gt;<a class="code" href="structfsm__t.html#a6c3c1228679eb15c274cc8bf30c334a0">p_tt</a>; p_t-&gt;<a class="code" href="structfsm__trans__t.html#adc67dd348bb6fc59cb4d59d598747274">orig_state</a> &gt;= 0; ++p_t)</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordflow">if</span> ((p_fsm-&gt;<a class="code" href="structfsm__t.html#ab250e61dab922ea23423a06fd1e6ea34">current_state</a> == p_t-&gt;<a class="code" href="structfsm__trans__t.html#adc67dd348bb6fc59cb4d59d598747274">orig_state</a>))</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        {</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            p_fsm-&gt;<a class="code" href="structfsm__t.html#ab250e61dab922ea23423a06fd1e6ea34">current_state</a> = p_t-&gt;<a class="code" href="structfsm__trans__t.html#af125a66cfa85df848aa173961218e809">dest_state</a>;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="keywordflow">if</span> (p_t-&gt;<a class="code" href="structfsm__trans__t.html#aa14b0ae2ea26e60da884d09f281f7302">out</a>)</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            {</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                p_t-&gt;<a class="code" href="structfsm__trans__t.html#aa14b0ae2ea26e60da884d09f281f7302">out</a>(p_fsm);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            }</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        }</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    }</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="keywordflow">if</span>(p_t-&gt;<a class="code" href="structfsm__trans__t.html#a88eefe4fbfe9c61845f867752d692ef1">in</a> == NULL || p_t-&gt;<a class="code" href="structfsm__trans__t.html#a88eefe4fbfe9c61845f867752d692ef1">in</a>(p_fsm)){</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                p_fsm-&gt;<a class="code" href="structfsm__t.html#ab250e61dab922ea23423a06fd1e6ea34">current_state</a> = p_t-&gt;<a class="code" href="structfsm__trans__t.html#af125a66cfa85df848aa173961218e809">dest_state</a>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                <span class="keywordflow">if</span> (p_t-&gt;<a class="code" href="structfsm__trans__t.html#aa14b0ae2ea26e60da884d09f281f7302">out</a>)</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                    p_t-&gt;<a class="code" href="structfsm__trans__t.html#aa14b0ae2ea26e60da884d09f281f7302">out</a>(p_fsm);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                <span class="comment">//Transition found and executed, return 1;</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                <span class="comment">//Transitions found but cannot be executed</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                transitions_found++;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            }</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        }</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    }</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordflow">if</span>(!transitions_found)</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    {</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="comment">//No transition found, return -1</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="comment">//Transitions found, but not executed, return 0</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    }</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="afsm_8c_html_a42ab412fe7a2ac8efb84e813d638128c"><div class="ttname"><a href="fsm_8c.html#a42ab412fe7a2ac8efb84e813d638128c">fsm_destroy</a></div><div class="ttdeci">void fsm_destroy(fsm_t *p_fsm)</div><div class="ttdoc">It frees the memory previously allocated for the state machine. Once this function is called,...</div><div class="ttdef"><b>Definition:</b> <a href="fsm_8c_source.html#l00046">fsm.c:46</a></div></div>
@@ -193,9 +208,9 @@ $(document).ready(function(){initNavTree('fsm_8c_source.html',''); initResizable
 <div class="ttc" id="afsm_8c_html_a172ed4bc371674e6de85e680d733550c"><div class="ttname"><a href="fsm_8c.html#a172ed4bc371674e6de85e680d733550c">fsm_get_state</a></div><div class="ttdeci">int fsm_get_state(fsm_t *p_fsm)</div><div class="ttdoc">Get the current state of the state machine.</div><div class="ttdef"><b>Definition:</b> <a href="fsm_8c_source.html#l00074">fsm.c:74</a></div></div>
 <div class="ttc" id="astructfsm__trans__t_html_af125a66cfa85df848aa173961218e809"><div class="ttname"><a href="structfsm__trans__t.html#af125a66cfa85df848aa173961218e809">fsm_trans_t::dest_state</a></div><div class="ttdeci">int dest_state</div><div class="ttdef"><b>Definition:</b> <a href="fsm_8h_source.html#l00042">fsm.h:42</a></div></div>
 <div class="ttc" id="atest__fsm_8h_html_a3a22d08e08c67920f6736f0a8f3391d9"><div class="ttname"><a href="test__fsm_8h.html#a3a22d08e08c67920f6736f0a8f3391d9">fsm_free</a></div><div class="ttdeci">void fsm_free(void *)</div></div>
-<div class="ttc" id="afsm_8c_html_ab9f849bd2d80e5efaa320ddb59b4b246"><div class="ttname"><a href="fsm_8c.html#ab9f849bd2d80e5efaa320ddb59b4b246">fsm_fire</a></div><div class="ttdeci">void fsm_fire(fsm_t *p_fsm)</div><div class="ttdoc">Check the full transition table.</div><div class="ttdef"><b>Definition:</b> <a href="fsm_8c_source.html#l00084">fsm.c:84</a></div></div>
 <div class="ttc" id="astructfsm__trans__t_html"><div class="ttname"><a href="structfsm__trans__t.html">fsm_trans_t</a></div><div class="ttdoc">Structure to define a state machine transition table.</div><div class="ttdef"><b>Definition:</b> <a href="fsm_8h_source.html#l00038">fsm.h:38</a></div></div>
 <div class="ttc" id="afsm_8h_html"><div class="ttname"><a href="fsm_8h.html">fsm.h</a></div><div class="ttdoc">Header for fsm.c file.</div></div>
+<div class="ttc" id="afsm_8c_html_a035fe61c1cb2bd6005a3d003fa19c1c4"><div class="ttname"><a href="fsm_8c.html#a035fe61c1cb2bd6005a3d003fa19c1c4">fsm_fire</a></div><div class="ttdeci">int fsm_fire(fsm_t *p_fsm)</div><div class="ttdoc">Check the full transition table.</div><div class="ttdef"><b>Definition:</b> <a href="fsm_8c_source.html#l00084">fsm.c:84</a></div></div>
 <div class="ttc" id="astructfsm__trans__t_html_a88eefe4fbfe9c61845f867752d692ef1"><div class="ttname"><a href="structfsm__trans__t.html#a88eefe4fbfe9c61845f867752d692ef1">fsm_trans_t::in</a></div><div class="ttdeci">fsm_input_func_t in</div><div class="ttdef"><b>Definition:</b> <a href="fsm_8h_source.html#l00041">fsm.h:41</a></div></div>
 <div class="ttc" id="astructfsm__trans__t_html_aa14b0ae2ea26e60da884d09f281f7302"><div class="ttname"><a href="structfsm__trans__t.html#aa14b0ae2ea26e60da884d09f281f7302">fsm_trans_t::out</a></div><div class="ttdeci">fsm_output_func_t out</div><div class="ttdef"><b>Definition:</b> <a href="fsm_8h_source.html#l00043">fsm.h:43</a></div></div>
 <div class="ttc" id="astructfsm__t_html_a6c3c1228679eb15c274cc8bf30c334a0"><div class="ttname"><a href="structfsm__t.html#a6c3c1228679eb15c274cc8bf30c334a0">fsm_t::p_tt</a></div><div class="ttdeci">fsm_trans_t * p_tt</div><div class="ttdef"><b>Definition:</b> <a href="fsm_8h_source.html#l00052">fsm.h:52</a></div></div>

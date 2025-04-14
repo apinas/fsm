@@ -145,9 +145,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a6cfb15d1bf24ba231bef078a07ee26f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm_8h.html#a6cfb15d1bf24ba231bef078a07ee26f2">fsm_set_state</a> (<a class="el" href="structfsm__t.html">fsm_t</a> *p_fsm, int state)</td></tr>
 <tr class="memdesc:a6cfb15d1bf24ba231bef078a07ee26f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the current state of the state machine.  <a href="fsm_8h.html#a6cfb15d1bf24ba231bef078a07ee26f2">More...</a><br /></td></tr>
 <tr class="separator:a6cfb15d1bf24ba231bef078a07ee26f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9f849bd2d80e5efaa320ddb59b4b246"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm_8h.html#ab9f849bd2d80e5efaa320ddb59b4b246">fsm_fire</a> (<a class="el" href="structfsm__t.html">fsm_t</a> *p_fsm)</td></tr>
-<tr class="memdesc:ab9f849bd2d80e5efaa320ddb59b4b246"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check the full transition table.  <a href="fsm_8h.html#ab9f849bd2d80e5efaa320ddb59b4b246">More...</a><br /></td></tr>
-<tr class="separator:ab9f849bd2d80e5efaa320ddb59b4b246"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a035fe61c1cb2bd6005a3d003fa19c1c4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm_8h.html#a035fe61c1cb2bd6005a3d003fa19c1c4">fsm_fire</a> (<a class="el" href="structfsm__t.html">fsm_t</a> *p_fsm)</td></tr>
+<tr class="memdesc:a035fe61c1cb2bd6005a3d003fa19c1c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check the full transition table.  <a href="fsm_8h.html#a035fe61c1cb2bd6005a3d003fa19c1c4">More...</a><br /></td></tr>
+<tr class="separator:a035fe61c1cb2bd6005a3d003fa19c1c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Header for <a class="el" href="fsm_8c.html" title="Library to create Finite State Machines using composition.">fsm.c</a> file. </p>
@@ -273,14 +273,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ab9f849bd2d80e5efaa320ddb59b4b246"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab9f849bd2d80e5efaa320ddb59b4b246">&#9670;&nbsp;</a></span>fsm_fire()</h2>
+<a id="a035fe61c1cb2bd6005a3d003fa19c1c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a035fe61c1cb2bd6005a3d003fa19c1c4">&#9670;&nbsp;</a></span>fsm_fire()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void fsm_fire </td>
+          <td class="memname">int fsm_fire </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structfsm__t.html">fsm_t</a> *&#160;</td>
           <td class="paramname"><em>p_fsm</em></td><td>)</td>
@@ -297,6 +297,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>-1 if no transitions available, 0 if guard returns false, 1 if guard returns true and transition is made. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="fsm_8c_source.html#l00084">84</a> of file <a class="el" href="fsm_8c_source.html">fsm.c</a>.</p>
 

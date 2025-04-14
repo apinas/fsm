@@ -11,6 +11,8 @@ var test__fsm__legacy_8c =
     [ "test_fsm_fire_checkFunctionIsCalledAndResultIsImportantForTransition", "test__fsm__legacy_8c.html#a86f11c77c128ea17560ce131a07627fa", null ],
     [ "test_fsm_fire_isTrueReturnsFalseMeansDoNothingIsNotCalledAndStateKeepsTheSame", "test__fsm__legacy_8c.html#a0c13bf9253ff1b36da3634589acf32b4", null ],
     [ "test_fsm_fire_outFunctionCalled", "test__fsm__legacy_8c.html#a5a74d43ecc47780e9676c2a58c0daac2", null ],
+    [ "test_fsm_fire_returnsMinusOneWhenNoTransitionsAvailable", "test__fsm__legacy_8c.html#a7b9a77771ad6f55cb9a4ac0a4c6a0906", null ],
+    [ "test_fsm_fire_returnsWithTransitionsAvailable", "test__fsm__legacy_8c.html#a137713c7c8a3aa86efaf911541bf6b37", null ],
     [ "test_fsm_init_returnsValidTransitions", "test__fsm__legacy_8c.html#a4865b39b2c084a1a1aa5ccd58560ee39", null ],
     [ "test_fsm_init_returnsZeroWhenMaxTransitions", "test__fsm__legacy_8c.html#acd07817e827f100ef64893d852446f32", null ],
     [ "test_fsm_new_calledTwiceWithSameValidDataCreatesDifferentInstancePointer", "test__fsm__legacy_8c.html#a2601e934047f20ea66011517a8875b6e", null ],
