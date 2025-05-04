@@ -392,6 +392,7 @@ void test_fsm_fire_isTrueReturnsFalseMeansDoNothingIsNotCalledAndStateKeepsTheSa
     is_true_IgnoreAndReturn(0);
     fsm_malloc_Stub(cb_malloc);
     fsm_t *f = fsm_new(tt);
+    fsm_fire(f);
     int state = fsm_get_state(f);
     TEST_ASSERT_EQUAL(STATE0, state);
 
